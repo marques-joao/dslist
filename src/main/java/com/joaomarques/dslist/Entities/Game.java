@@ -19,7 +19,17 @@ public class Game {
     private String platforms;
     private Double score;
     private String imgUrl;
+    
+    /* 
+     * Por padrão, o tipo String do Java é identificado como um varchar(255) no SQL,
+     * porém os textos colocados como valor do atributo podem ultrapassar esse limite,
+     * por isso a anotação @Column com o parâmetro columnDefinition, para que possamos 
+     * alterar o tipo de varchar(255) para text, que aceita muito mais caracteres
+     */
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
+
+    @Column(columnDefinition = "TEXT")
     private String longDescription;
 
     public Game(){}
