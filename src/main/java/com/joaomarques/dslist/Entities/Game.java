@@ -2,9 +2,18 @@ package com.joaomarques.dslist.Entities;
 
 import java.util.Objects;
 
+import jakarta.persistence.*;
+
+@Entity //Fazendo com que a classe se torne equivalente a uma tabela no banco de dados
+@Table(name = "tb_game") //Definindo o nome da tabela
 public class Game {
+
+    @Id //Define que o atributo logo abaixo é uma primary key
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //Faz com que a primary key seja auto incrementada
     private Long id;
     private String title;
+
+    @Column(name = "game_year") //Alterando o nome da coluna de 'year' para 'game_year', pois no SQL 'year' é uma palavra reservada
     private Integer year;
     private String genre;
     private String platforms;
@@ -100,23 +109,26 @@ public class Game {
     this.longDescription = longDescription;
     }
 
-    //PESQUISAR O QUE SIGNIFICA ESTE TRECHO DE CÓDIGO ABAIXO
+    /* Métodos para comparar um objeto com outro */
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(id); //Retorna o identificador de um objeto
     }
 
     @Override
     public boolean equals(Object obj) {
-        if(this == obj)
+        if(this == obj) //Compara se o objeto atual e o objeto passado como parâmetro são iguais
             return true;
-        if(obj == null)
+        if(obj == null) //Confere se o objeto passado como parâmetro é nulo
             return false;
-        if(getClass() != obj.getClass())
+        if(getClass() != obj.getClass()) //Compara se as classes dos objetos são iguais
             return false;
 
-        Game other = (Game) obj;
+        /*Realiza um downcast do objeto passado como parâmetro, ou seja, converte o objeto para a classe Game,
+         * pois é necessário acessar os atributos específicos dessa classe para ser feita a comparação
+        */
+        Game other = (Game) obj; 
 
         return Objects.equals(id, other.id);
     }
