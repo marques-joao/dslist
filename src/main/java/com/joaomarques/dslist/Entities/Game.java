@@ -135,9 +135,10 @@ public class Game {
         if(getClass() != obj.getClass()) //Compara se as classes dos objetos são iguais
             return false;
 
-        /*Realiza um downcast do objeto passado como parâmetro, ou seja, converte o objeto para a classe Game,
+        /*
+         * Realiza um downcast do objeto passado como parâmetro, ou seja, converte o objeto para a classe Game,
          * pois é necessário acessar os atributos específicos dessa classe para ser feita a comparação
-        */
+         */
         Game other = (Game) obj; 
 
         return Objects.equals(id, other.id);
