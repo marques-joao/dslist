@@ -1,5 +1,6 @@
 package com.joaomarques.dslist.Services;
-//import com.joaomarques.dslist.DTO.GameMinDTO;
+
+import com.joaomarques.dslist.DTO.GameMinDTO;
 import com.joaomarques.dslist.Entities.Game;
 import com.joaomarques.dslist.Repositories.GameRepository;
 
@@ -15,8 +16,8 @@ public class GameService {
     @Autowired
     private GameRepository gameRepository; // Injetando uma instância do GameRepository no GameService
 
-    public List<Game> findAll() { // Método que retorna uma lista de todos os jogos
-        List<Game> result = gameRepository.findAll();
-        return result;
+    public List<GameMinDTO> findAll() { // Método que retorna uma lista de todos os jogos
+        List<Game> result = gameRepository.findAll(); // Chamando o método findAll do GameRepository
+        return result.stream().map(x -> new GameMinDTO(x)).toList(); // Transformando o objeto para a classe DTO e convertendo em uma lista
     }
 }
