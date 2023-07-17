@@ -3,6 +3,7 @@ package com.joaomarques.dslist.DTO;
 import com.joaomarques.dslist.Entities.Game;
 
 public class GameMinDTO {
+    
     private Long id;
     private String title;
     public Integer year;

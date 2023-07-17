@@ -4,16 +4,16 @@ import java.util.Objects;
 
 import jakarta.persistence.*;
 
-@Entity //Fazendo com que a classe se torne equivalente a uma tabela no banco de dados
-@Table(name = "tb_game") //Definindo o nome da tabela
+@Entity // Fazendo com que a classe se torne equivalente a uma tabela no banco de dados
+@Table(name = "tb_game") // Definindo o nome da tabela
 public class Game {
 
-    @Id //Define que o atributo logo abaixo é uma primary key
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //Faz com que a primary key seja auto incrementada
+    @Id // Define que o atributo logo abaixo é uma primary key
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Faz com que a primary key seja auto incrementada
     private Long id;
     private String title;
 
-    @Column(name = "game_year") //Alterando o nome da coluna de 'year' para 'game_year', pois no SQL 'year' é uma palavra reservada
+    @Column(name = "game_year") // Alterando o nome da coluna de 'year' para 'game_year', pois no SQL 'year' é uma palavra reservada
     private Integer year;
     private String genre;
     private String platforms;
@@ -123,16 +123,16 @@ public class Game {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id); //Retorna o identificador de um objeto
+        return Objects.hash(id); // Retorna o identificador de um objeto
     }
 
     @Override
     public boolean equals(Object obj) {
-        if(this == obj) //Compara se o objeto atual e o objeto passado como parâmetro são iguais
+        if(this == obj) // Compara se o objeto atual e o objeto passado como parâmetro são iguais
             return true;
-        if(obj == null) //Confere se o objeto passado como parâmetro é nulo
+        if(obj == null) // Confere se o objeto passado como parâmetro é nulo
             return false;
-        if(getClass() != obj.getClass()) //Compara se as classes dos objetos são iguais
+        if(getClass() != obj.getClass()) // Compara se as classes dos objetos são iguais
             return false;
 
         /*

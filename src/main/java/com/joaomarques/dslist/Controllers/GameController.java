@@ -1,6 +1,6 @@
 package com.joaomarques.dslist.Controllers;
+
 import com.joaomarques.dslist.DTO.GameMinDTO;
-//import com.joaomarques.dslist.Entities.Game;
 import com.joaomarques.dslist.Services.GameService;
 
 import java.util.List;
@@ -17,7 +17,7 @@ public class GameController {
 
     @GetMapping // Verbo GET do http (método para retornar algum dado)
     public List<GameMinDTO> findAll() {
-        List<GameMinDTO> result = gameService.findAll(); // Chamando o método findAlll() da classe GameService
+        List<GameMinDTO> result = gameService.findAll(); // Chamando o método findAll() da classe GameService
         return result;
     }
 }
