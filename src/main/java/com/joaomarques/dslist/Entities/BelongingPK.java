@@ -4,15 +4,15 @@ import java.util.Objects;
 
 import jakarta.persistence.*;
 
-@Embeddable
-public class BelongingPK {
+@Embeddable // Indicando que esta classe funciona como campos dentro de outra entity
+public class BelongingPK { // Classe auxiliar para definir o id composto da classe Belonging
 
-    @ManyToOne
-    @JoinColumn(name = "game_id")
+    @ManyToOne // Identificando que há um relacionamento N:N
+    @JoinColumn(name = "game_id") // Define nome da coluna da chave estrangeira
     private Game game;
     
-    @ManyToOne
-    @JoinColumn(name = "list_id")
+    @ManyToOne // Identificando que há um relacionamento N:N
+    @JoinColumn(name = "list_id") // Define nome da coluna da chave estrangeira
     private GameList list;
 
     public BelongingPK(){}
@@ -38,22 +38,32 @@ public class BelongingPK {
         return list;
     }
 
+    /* Métodos para comparar um objeto com outro */
+
     @Override
     public int hashCode() {
-        return Objects.hash(game, list);
+        return Objects.hash(game, list); // Retorna o identificador de um objeto
     }
 
     @Override
     public boolean equals(Object obj) {
-        if(this == obj)
+        if(this == obj) // Compara se o objeto atual e o objeto passado como parâmetro são iguais
             return true;
-        if(obj == null)
+        if(obj == null) // Confere se o objeto passado como parâmetro é nulo
             return false;
-        if(getClass() != obj.getClass())
+        if(getClass() != obj.getClass()) // Compara se as classes dos objetos são iguais
             return false;
 
+        /*
+         * Realiza um downcast do objeto passado como parâmetro, ou seja, converte o objeto para a classe BelongingPK,
+         * pois é necessário acessar os atributos específicos dessa classe para ser feita a comparação
+         */
         BelongingPK other = (BelongingPK) obj;
 
-        return Objects.equals(game, other.game) && Objects.equals(list, other.list);
+        /*
+         * Já que o id são dois objetos, então a comparação também precisa ser dupla 
+         * e as duas precisam satisfazer a condição para retornar true
+         */
+        return Objects.equals(game, other.game) && Objects.equals(list, other.list); // Retorna o resultado dessa comparação, sendo true ou false
     }
 }

@@ -141,6 +141,6 @@ public class Game {
          */
         Game other = (Game) obj; 
 
-        return Objects.equals(id, other.id);
+        return Objects.equals(id, other.id); // Retorna o resultado dessa comparação, sendo true ou false
     }
 }

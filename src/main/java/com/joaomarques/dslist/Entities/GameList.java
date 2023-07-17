@@ -36,6 +36,8 @@ public class GameList {
         return name;
     }
 
+    /* Métodos para comparar um objeto com outro */
+
     @Override
     public int hashCode() {
         return Objects.hash(id); // Retorna o identificador de um objeto
@@ -51,11 +53,11 @@ public class GameList {
             return false;
 
         /*
-         * Realiza um downcast do objeto passado como parâmetro, ou seja, converte o objeto para a classe Game,
+         * Realiza um downcast do objeto passado como parâmetro, ou seja, converte o objeto para a classe GameList,
          * pois é necessário acessar os atributos específicos dessa classe para ser feita a comparação
          */
         GameList other = (GameList) obj; 
 
-        return Objects.equals(id, other.id);
+        return Objects.equals(id, other.id); // Retorna o resultado dessa comparação, sendo true ou false
     }
 }
