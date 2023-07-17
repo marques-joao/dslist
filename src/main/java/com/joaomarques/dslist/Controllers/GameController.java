@@ -1,6 +1,6 @@
 package com.joaomarques.dslist.Controllers;
 
-import com.joaomarques.dslist.DTO.GameMinDTO;
+import com.joaomarques.dslist.DTO.*;
 import com.joaomarques.dslist.Services.GameService;
 
 import java.util.List;
@@ -14,6 +14,12 @@ public class GameController {
 
     @Autowired
     private GameService gameService; // Injetando uma instância do GameService no GameController
+
+    @GetMapping(value = "/{id}")
+    public GameDTO findById(@PathVariable Long id) {
+        GameDTO result = gameService.findById(id);
+        return result;
+    }
 
     @GetMapping // Verbo GET do http (método para retornar algum dado)
     public List<GameMinDTO> findAll() {

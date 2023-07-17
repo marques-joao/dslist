@@ -6,7 +6,7 @@ public class GameMinDTO {
     
     private Long id;
     private String title;
-    public Integer year;
+    private Integer year;
     private String imgUrl;
     private String shortDescription;
 

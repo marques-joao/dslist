@@ -60,7 +60,7 @@ public class Game {
     }
     
     public void setTitle(String title) {
-    this.title = title;
+        this.title = title;
     }
 
     public Integer getYear() {
@@ -68,7 +68,7 @@ public class Game {
     }
     
     public void setYear(Integer year) {
-    this.year = year;
+        this.year = year;
     }
 
     public String getGenre() {
@@ -76,7 +76,7 @@ public class Game {
     }
     
     public void setGenre(String genre) {
-    this.genre = genre;
+        this.genre = genre;
     }
 
     public String getPlatforms() {
@@ -84,7 +84,7 @@ public class Game {
     }
     
     public void setPlatforms(String platforms) {
-    this.platforms = platforms;
+        this.platforms = platforms;
     }
 
     public Double getScore() {
@@ -92,7 +92,7 @@ public class Game {
     }
     
     public void setScore(Double score) {
-    this.score = score;
+        this.score = score;
     }
 
     public String getImgUrl() {
@@ -100,7 +100,7 @@ public class Game {
     }
     
     public void setImgUrl(String imgUrl) {
-    this.imgUrl = imgUrl;
+        this.imgUrl = imgUrl;
     }
 
     public String getShortDescription() {
@@ -108,7 +108,7 @@ public class Game {
     }
     
     public void setShortDescription(String shortDescription) {
-    this.shortDescription = shortDescription;
+        this.shortDescription = shortDescription;
     }
 
     public String getLongDescription() {
@@ -116,7 +116,7 @@ public class Game {
     }
     
     public void setLongDescription(String longDescription) {
-    this.longDescription = longDescription;
+        this.longDescription = longDescription;
     }
 
     /* Métodos para comparar um objeto com outro */
