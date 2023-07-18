@@ -66,4 +66,5 @@ public class BelongingPK { // Classe auxiliar para definir o id composto da clas
          */
         return Objects.equals(game, other.game) && Objects.equals(list, other.list); // Retorna o resultado dessa comparação, sendo true ou false
     }
+    
 }

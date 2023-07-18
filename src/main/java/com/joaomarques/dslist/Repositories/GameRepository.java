@@ -1,13 +1,13 @@
 package com.joaomarques.dslist.Repositories;
 
+import com.joaomarques.dslist.Entities.Game;
+
 /*
  * Biblioteca JpaRepository: Ela que automatiza o processo
  * de acesso aos dados, fazendo as consultas sem que seja 
  * necessário realizar os comandos de SQL
 */
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.joaomarques.dslist.Entities.Game;
 
 /*
  * Camada de acesso aos dados. Esta classe que faz as consultas e 

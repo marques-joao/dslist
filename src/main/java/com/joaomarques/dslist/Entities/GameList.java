@@ -60,4 +60,5 @@ public class GameList {
 
         return Objects.equals(id, other.id); // Retorna o resultado dessa comparação, sendo true ou false
     }
+    
 }

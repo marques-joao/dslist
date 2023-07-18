@@ -26,4 +26,5 @@ public class GameController {
         List<GameMinDTO> result = gameService.findAll(); // Chamando o método findAll() da classe GameService
         return result;
     }
+    
 }
