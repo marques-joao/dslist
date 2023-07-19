@@ -1,6 +1,7 @@
 package com.joaomarques.dslist.DTO;
 
 import com.joaomarques.dslist.Entities.Game;
+import com.joaomarques.dslist.Projections.GameMinProjection;
 
 public class GameMinDTO {
     
@@ -22,6 +23,14 @@ public class GameMinDTO {
         year = entity.getYear(); // Atribui o valor do year da Entity ao atributo da DTO
         imgUrl = entity.getImgUrl(); // Atribui o valor da imgUrl da Entity ao atributo da DTO
         shortDescription = entity.getShortDescription(); // Atribui o valor do shortDescription da Entity ao atributo da DTO
+    }
+
+    public GameMinDTO(GameMinProjection projection) {
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getYear();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getShortDescription();
     }
 
     /*

@@ -3,6 +3,7 @@ package com.joaomarques.dslist.Services;
 import com.joaomarques.dslist.DTO.GameDTO;
 import com.joaomarques.dslist.DTO.GameMinDTO;
 import com.joaomarques.dslist.Entities.Game;
+import com.joaomarques.dslist.Projections.GameMinProjection;
 import com.joaomarques.dslist.Repositories.GameRepository;
 
 import java.util.List;
@@ -26,6 +27,12 @@ public class GameService {
     @Transactional(readOnly = true)
     public List<GameMinDTO> findAll() { // Método que retorna uma lista de todos os jogos
         List<Game> result = gameRepository.findAll(); // Chamando o método findAll() do GameRepository
+        return result.stream().map(x -> new GameMinDTO(x)).toList(); // Transformando o objeto para a classe DTO e convertendo em uma lista
+    }
+    
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> findByList(Long listId) { // Método que retorna todos os jogos de uma determinada lista
+        List<GameMinProjection> result = gameRepository.searchByList(listId); // Chamando o método searchByList() do GameRepository
         return result.stream().map(x -> new GameMinDTO(x)).toList(); // Transformando o objeto para a classe DTO e convertendo em uma lista
     }
     
