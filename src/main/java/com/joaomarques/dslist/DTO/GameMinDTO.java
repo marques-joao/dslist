@@ -3,6 +3,7 @@ package com.joaomarques.dslist.DTO;
 import com.joaomarques.dslist.Entities.Game;
 import com.joaomarques.dslist.Projections.GameMinProjection;
 
+// Classes DTO não precisam ser mapeadas
 public class GameMinDTO {
     
     private Long id;

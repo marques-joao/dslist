@@ -19,6 +19,12 @@ import org.springframework.data.jpa.repository.Query;
  */
 public interface GameRepository extends JpaRepository<Game, Long> { // Nome da entidade e tipo do id na List do Jpa
     
+	/*
+	 * Query personalizada
+	 * Para que seja feita uma query nativa do SQL, e não da Jpa, utiliza-se
+	 * o parâmetro nativeQuery = true
+	 */
+
     @Query(nativeQuery = true, value = """
 		SELECT tb_game.id, tb_game.title, tb_game.game_year AS `year`, tb_game.img_url AS imgUrl,
 		tb_game.short_description AS shortDescription, tb_belonging.position
@@ -28,6 +34,12 @@ public interface GameRepository extends JpaRepository<Game, Long> { // Nome da e
 		ORDER BY tb_belonging.position
 			""")
             
+	/*
+	 * Como queries personalizadas retornam interfaces, é necessário
+	 * que se crie uma, que chamamos de projection, para coletar
+	 * esses dados
+	 */
+	
     List<GameMinProjection> searchByList(Long listId);
 	
 }

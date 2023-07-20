@@ -2,6 +2,10 @@ package com.joaomarques.dslist.DTO;
 
 import com.joaomarques.dslist.Entities.Game;
 
+/*
+ * Biblioteca do Spring com o método copyProperties(), que serve para copiar os dados 
+ * de uma classe para a outra, caso os atributos tenham os mesmos nomes
+ */
 import org.springframework.beans.BeanUtils;
 
 public class GameDTO {
@@ -19,10 +23,6 @@ public class GameDTO {
     public GameDTO(){}
 
     public GameDTO(Game entity) {
-        /*
-         * Biblioteca do Spring com o método copyProperties(), que serve para copiar os dados de uma classe 
-         * para a outra, caso os atributos tenham os mesmos nomes
-         */
         BeanUtils.copyProperties(entity, this);
     }
 

@@ -15,10 +15,10 @@ import org.springframework.stereotype.Service;
 @Service // Registrando essa classe como um componente do sistema (poderia ser @Component)
 public class GameService {
     
-    @Autowired
+    @Autowired // Anotação que instancia o objeto (equivalente a GameRepository gameRepository = new GameRepository())
     private GameRepository gameRepository; // Injetando uma instância do GameRepository no GameService
 
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = true) // Anotação do Spring, com readOnly = true, indica que é um método apenas de leitura
     public GameDTO findById(Long id) {
         Game result = gameRepository.findById(id).get();
         return new GameDTO(result); // Convertendo o resultado em um objeto GameDTO
